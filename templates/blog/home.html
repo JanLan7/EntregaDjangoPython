@@ -3,6 +3,40 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<h1>Bienvenido a mi blog</h1>
-<p>Este es el inicio de tu aplicación web con Django.</p>
+<div class="text-center mb-5">
+    <h1 class="display-4 text-light">Bienvenido a Mi Blog de Reseñas de Libros</h1>
+    <p class="lead text-light">Descubre las mejores reseñas de libros y encuentra tu próxima gran lectura.</p>
+    <a href="{% url 'pages_list' %}" class="btn btn-primary btn-lg">Explorar Reseñas</a>
+</div>
+
+<div class="text-center mt-5">
+    <img src="/media/blog/biblioteca.jpg" alt="Biblioteca" class="img-fluid rounded shadow-lg" style="max-width: 80%; height: auto;">
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Reseñas Detalladas</h5>
+                <p class="card-text">Opiniones sinceras y análisis profundos de libros de diversos géneros.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Recomendaciones</h5>
+                <p class="card-text">Encuentra libros que se adapten a tus gustos y preferencias.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Autores Destacados</h5>
+                <p class="card-text">Conoce a los autores detrás de las historias que amas.</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

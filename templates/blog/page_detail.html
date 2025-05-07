@@ -1,8 +1,28 @@
 <!-- templates/blog/page_detail.html -->
-<h1>{{ page.title }}</h1>
-<h3>{{ page.subtitle }}</h3>
-{% if page.image %}
-    <img src="{{ page.image.url }}" alt="imagen" width="300">
-{% endif %}
-<p>{{ page.content }}</p>
-<p>Publicado el: {{ page.created_at }}</p>
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<div class="card text-light" style="background-color: #1e1e1e;">
+    <div class="card-header">
+        <h1 class="text-light">{{ page.title }}</h1>
+        <h3 class="text-muted">Autor: <span class="text-light">{{ page.subtitle }}</span></h3>
+    </div>
+    <div class="card-body">
+        {% if page.image %}
+            <img src="{{ page.image.url }}" alt="Portada de {{ page.title }}" class="img-fluid mb-3" style="max-height: 300px; object-fit: cover;">
+        {% endif %}
+        <p class="text-light">{{ page.content }}</p>
+        <hr>
+        <h4>Información adicional</h4>
+        <ul>
+            <li><strong>Género:</strong> <span class="text-light">{{ page.genre }}</span></li>
+            <li><strong>Calificación:</strong> ⭐<span class="text-light">{{ page.rating }}</span></li>
+        </ul>
+    </div>
+    <div class="card-footer text-muted">
+        Publicado el: <span class="text-light">{{ page.created_at }}</span>
+    </div>
+</div>
+{% endblock %}

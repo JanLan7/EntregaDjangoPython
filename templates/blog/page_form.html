@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Crear/Editar Reseña{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">{% if object %}Editar Reseña{% else %}Crear Reseña{% endif %}</h2>
+<form method="post" enctype="multipart/form-data" class="needs-validation">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="id_title" class="form-label">Nombre</label>
+        {{ form.title }}
+    </div>
+    <div class="mb-3">
+        <label for="id_subtitle" class="form-label">Autor</label>
+        {{ form.subtitle }}
+    </div>
+    <div class="mb-3">
+        <label for="id_content" class="form-label">Contenido</label>
+        {{ form.content }}
+    </div>
+    <div class="mb-3">
+        <label for="id_image" class="form-label">Imagen</label>
+        {{ form.image }}
+    </div>
+    <div class="mb-3">
+        <label for="id_genre" class="form-label">Género</label>
+        {{ form.genre }}
+    </div>
+    <div class="mb-3">
+        <label for="id_rating" class="form-label">Calificación</label>
+        {{ form.rating }}
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{% url 'pages_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

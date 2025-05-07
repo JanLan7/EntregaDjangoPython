@@ -26,13 +26,13 @@ def inicio(request):
 
 class PageCreateView(LoginRequiredMixin, CreateView):
     model = Page
-    fields = ['title', 'subtitle', 'content', 'image']
+    fields = ['title', 'subtitle', 'content', 'image', 'genre', 'rating']
     template_name = 'blog/page_form.html'
     success_url = reverse_lazy('pages_list')
 
 class PageUpdateView(LoginRequiredMixin, UpdateView):
     model = Page
-    fields = ['title', 'subtitle', 'content', 'image']
+    fields = ['title', 'subtitle', 'content', 'image', 'genre', 'rating']
     template_name = 'blog/page_form.html'
     success_url = reverse_lazy('pages_list')
 
